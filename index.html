@@ -1,0 +1,437 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Infinite Pyaar.exe 💗</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --pink: #ff70a6;
+  --purple: #9274ff;
+  --ink: #352844;
+  --glass: rgba(255,255,255,.78);
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: Poppins, sans-serif;
+  color: var(--ink);
+  background:
+    radial-gradient(circle at 5% 5%, #ffe0ec, transparent 35%),
+    radial-gradient(circle at 95% 20%, #e5deff, transparent 35%),
+    linear-gradient(135deg,#fff8fb,#f7f4ff,#fff7ee);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+button { font: inherit; cursor: pointer; }
+
+nav {
+  display:flex; justify-content:space-between; align-items:center;
+  padding:20px 7%; gap:12px; flex-wrap:wrap;
+}
+
+.logo { font-weight:900; font-size:21px; letter-spacing:-1px; }
+.logo span { color:#f05291; }
+.pill {
+  border:1px solid #ffffff; background:#ffffffa6;
+  padding:9px 15px; border-radius:40px; font-size:12px;
+}
+
+main { max-width:1050px; margin:auto; padding:35px 20px 70px; }
+
+.hero { text-align:center; padding:30px 0 35px; }
+
+.eyebrow {
+  display:inline-block; padding:8px 14px; border-radius:40px;
+  background:#ffe4f0; color:#d63d80; font-size:11px;
+  font-weight:800; letter-spacing:1.5px;
+}
+
+h1 {
+  font-size:clamp(42px,8vw,83px); line-height:1.05;
+  letter-spacing:-4px; margin:22px 0 15px; font-weight:900;
+}
+
+.gradient {
+  background:linear-gradient(90deg,#ff5796,#a26bff,#ff7b8e);
+  -webkit-background-clip:text; background-clip:text;
+  color:transparent;
+}
+
+.hero p { color:#81738e; max-width:550px; margin:0 auto; line-height:1.8; }
+
+.grid {
+  display:grid; grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:18px;
+}
+
+.card {
+  background:var(--glass); border:1px solid #fff;
+  border-radius:27px; padding:25px;
+  box-shadow:0 14px 45px #8d65a410;
+  backdrop-filter:blur(15px);
+  transition:transform .25s;
+}
+
+.card:hover { transform:translateY(-3px); }
+
+.card h2 { font-size:19px; margin:8px 0; letter-spacing:-.5px; }
+.card p { font-size:13px; line-height:1.8; color:#887c93; }
+.icon { font-size:30px; }
+
+.meter-card { grid-column:span 2; text-align:center; padding:30px 20px; }
+
+.big-heart {
+  font-size:67px; display:inline-block;
+  filter:drop-shadow(0 9px 12px #ff6ca644);
+  animation:heartbeat 1.2s infinite;
+}
+
+@keyframes heartbeat {
+  0%,100% { transform:scale(1); }
+  15% { transform:scale(1.12); }
+  30% { transform:scale(1); }
+  45% { transform:scale(1.08); }
+}
+
+.number {
+  font-size:clamp(38px,7vw,62px); font-weight:900;
+  letter-spacing:-3px; margin:5px 0;
+  overflow-wrap:anywhere;
+}
+
+.progress {
+  height:13px; max-width:460px; margin:18px auto;
+  background:#f1e7f5; border-radius:30px; overflow:hidden;
+}
+
+.bar {
+  height:100%; width:100%; border-radius:30px;
+  background:linear-gradient(90deg,#ff73a8,#b083ff,#ff86a3);
+  transition:width .3s;
+}
+
+button {
+  border:0; border-radius:14px; padding:12px 17px;
+  font-weight:700; font-size:13px;
+  transition:transform .15s, filter .15s;
+}
+
+button:hover { filter:brightness(.97); transform:translateY(-2px); }
+button:active { transform:scale(.97); }
+
+.primary {
+  background:linear-gradient(100deg,#ff72a7,#a37aff);
+  color:white; box-shadow:0 7px 18px #c16ba42c;
+}
+
+.secondary { background:#f8eafa; color:#7f53a9; }
+
+.output {
+  background:#fff9fe; border:1px dashed #efc8e8;
+  padding:16px; border-radius:16px; margin:17px 0;
+  font-size:14px; line-height:1.8; min-height:75px;
+  display:flex; align-items:center; justify-content:center;
+  text-align:center; overflow-wrap:anywhere;
+}
+
+.actions { display:flex; gap:9px; flex-wrap:wrap; }
+
+.full { width:100%; margin-top:8px; }
+
+.tag {
+  display:inline-block; padding:6px 10px; border-radius:30px;
+  background:#f0eaff; color:#8662c2;
+  font-size:10px; font-weight:800; margin-bottom:7px;
+}
+
+.stat-row { display:flex; justify-content:space-between; gap:10px; margin-top:18px; }
+.stat {
+  flex:1; background:#fff9fd; border-radius:14px;
+  padding:13px 8px; text-align:center;
+}
+.stat strong { display:block; font-size:20px; }
+.stat small { color:#9788a0; font-size:10px; }
+
+footer { text-align:center; color:#9a8ca5; font-size:12px; padding:25px 10px; }
+
+.float {
+  position:fixed; pointer-events:none; z-index:10;
+  bottom:-30px; animation:floatUp 3s ease-out forwards;
+}
+@keyframes floatUp {
+  to { transform:translateY(-110vh) rotate(35deg); opacity:0; }
+}
+
+.toast {
+  position:fixed; bottom:22px; left:50%;
+  transform:translateX(-50%);
+  background:#382a49; color:white; padding:12px 19px;
+  border-radius:30px; font-size:12px; z-index:20;
+  box-shadow:0 8px 30px #0002;
+  max-width:90%; text-align:center;
+}
+
+@media(max-width:650px) {
+  nav { padding:17px 5%; }
+  main { padding:20px 14px 40px; }
+  .grid { grid-template-columns:1fr; }
+  .meter-card { grid-column:span 1; }
+  .card { padding:21px; border-radius:23px; }
+  h1 { letter-spacing:-2.5px; }
+}
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="logo">infinite<span>pyaar</span>.exe 💗</div>
+  <div class="pill">● SINGLE PLAYER / MULTIPLE FEELINGS</div>
+</nav>
+
+<main>
+  <section class="hero">
+    <div class="eyebrow">THE MOST UNNECESSARY APP EVER</div>
+    <h1>Love ka koi<br><span class="gradient">END nahi. 😂</span></h1>
+    <p>Yahan pyaar unlimited hai, logic missing hai aur relationship status server ke mood par depend karta hai.</p>
+  </section>
+
+  <section class="grid">
+
+    <div class="card meter-card">
+      <div class="big-heart" id="heart">💗</div>
+      <div class="tag">LOVE SERVER STATUS: OVERLOADED</div>
+      <div class="number"><span id="love">100</span>%</div>
+      <h2 id="loveTitle">Pyaar toh unlimited hai!</h2>
+      <p id="loveText">Battery 2% hai, par feelings 2000%.</p>
+      <div class="progress"><div class="bar" id="bar"></div></div>
+      <button class="primary" onclick="addLove()">+ AUR PYAAR DAALO 💘</button>
+      <button class="secondary" onclick="resetLove()">RESET FEELINGS</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">💌</div>
+      <div class="tag">FLIRTING DEPARTMENT</div>
+      <h2>Pickup Line Generator</h2>
+      <p>Crush ko impress karo. Ya phir block hone ka naya reason dhoondo.</p>
+      <div class="output" id="pickup">Tum Wi-Fi ho kya? Tumhare bina connection nahi banta. 😂</div>
+      <button class="primary full" onclick="generate('pickup')">NEW PICKUP LINE ↗</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🤡</div>
+      <div class="tag">CERTIFIED BAHANE</div>
+      <h2>Late Reply Simulator</h2>
+      <p>Reply 8 ghante baad aaya? Yeh lo scientific explanation.</p>
+      <div class="output" id="excuse">Sorry, phone silent par tha. Dimag bhi.</div>
+      <button class="primary full" onclick="generate('excuse')">GENERATE BAHANA 😂</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">👩‍❤️‍👨</div>
+      <div class="tag">RELATIONSHIP LAB</div>
+      <h2>Couple Compatibility</h2>
+      <p>Naam daalo aur pao ek bilkul hi non-scientific result.</p>
+      <input id="name1" placeholder="Boy ka naam" maxlength="30">
+      <input id="name2" placeholder="Girl ka naam" maxlength="30">
+      <div class="output" id="compat">Compatibility report yahan aayegi.</div>
+      <button class="primary full" onclick="compatibility()">CHECK COMPATIBILITY</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">💔</div>
+      <div class="tag">EMOTIONAL DAMAGE</div>
+      <h2>Heartbreak Recovery</h2>
+      <p>Ex ki yaad aa rahi hai? Doctor Google nahi, yeh button dabao.</p>
+      <div class="output" id="roast">Ex online hai. Tum apna future online karo.</div>
+      <button class="primary full" onclick="generate('roast')">REALITY CHECK 🔥</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">📊</div>
+      <div class="tag">IMPORTANT RESEARCH</div>
+      <h2>Single Life Dashboard</h2>
+      <p>Relationship se door rehne ke measurable benefits.</p>
+      <div class="stat-row">
+        <div class="stat"><strong id="sleep">8h</strong><small>NEEND</small></div>
+        <div class="stat"><strong id="money">₹∞</strong><small>PAISE BACHE</small></div>
+        <div class="stat"><strong id="peace">100%</strong><small>SHANTI</small></div>
+      </div>
+      <button class="secondary full" onclick="singleMode()">SINGLE MODE ON</button>
+    </div>
+
+    <div class="card" style="grid-column:span 1">
+      <div class="icon">🎲</div>
+      <div class="tag">DESTINY.EXE</div>
+      <h2>Aaj Ka Love Forecast</h2>
+      <p>Future prediction by a calculator with zero qualifications.</p>
+      <div class="output" id="forecast">Aaj ka din romantic ho sakta hai. Agar Wi-Fi chala toh.</div>
+      <button class="primary full" onclick="generate('forecast')">PREDICT MY FUTURE</button>
+    </div>
+
+    <div class="card">
+      <div class="icon">🏆</div>
+      <div class="tag">GLOBAL LOVE RECORD</div>
+      <h2>Unlimited Counter</h2>
+      <p>Har click par internet history mein ek aur bekaar achievement.</p>
+      <div class="number"><span id="clicks">0</span></div>
+      <p>Total unnecessary clicks. World record abhi pending hai.</p>
+      <button class="primary full" onclick="countClick()">CLICK FOR NO REASON</button>
+    </div>
+
+  </section>
+
+  <footer>
+    Made with questionable logic & unlimited CSS. 💗<br>
+    © 2026 Infinite Pyaar.exe — Seriousness not found.
+  </footer>
+</main>
+
+<script>
+const data = {
+  pickup: [
+    "Tum Google ho kya? Jo main search kar raha tha, woh tum ho. 😂",
+    "Tum charger ho kya? Tumhare bina main 1% par hoon.",
+    "Tum Maggi ho kya? Bas 2 minute mein dil le gayi.",
+    "Tum Wi-Fi ho kya? Signal weak hai, par attachment strong.",
+    "Tum alarm ho kya? Tumhari wajah se roz jaldi uthne ka mann karta hai. Kabhi-kabhi.",
+    "Tum UPI ho kya? Dil se payment successful ho gayi.",
+    "Tum moon ho kya? Door ho, par attention poori tum par hai.",
+    "Tum password ho kya? Tumhe samajhne mein 10 attempts lag gaye."
+  ],
+  excuse: [
+    "Sorry, phone silent par tha. Dimag bhi.",
+    "Reply type kiya tha. Phir zindagi ke baare mein sochne laga.",
+    "Network issue tha. Feelings ka bhi.",
+    "Sorry, main busy tha. Apne hi overthinking department mein.",
+    "Message dekha tha. Reply ka software update pending tha.",
+    "Phone mummy ke paas tha. Excuse mera apna hai.",
+    "Main reply karne hi wala tha. Pichhle Tuesday se.",
+    "Battery low thi. Phone ki nahi, social energy ki."
+  ],
+  roast: [
+    "Ex online hai. Tum apna future online karo.",
+    "Jo gaya, usko jaane do. Recharge ka paisa bachao.",
+    "Unki story dekhne se career nahi banega. Apni story banao.",
+    "Dil toot gaya? Theek hai. Ab routine mat todna.",
+    "Unka last seen chhodo. Apna bank balance check karo.",
+    "Block list ko museum mat banao.",
+    "Closure ke chakkar mein apni growth close mat kar dena.",
+    "Self-respect premium feature hai. Free mein activate karo."
+  ],
+  forecast: [
+    "Aaj crush ka message aa sakta hai. Spam folder bhi check kar lena.",
+    "Aaj love life mein bada twist hai. Shayad charger mil jaaye.",
+    "Aaj tumhara lucky day hai. Bas expectations low rakhna.",
+    "Romance ke chances high hain. Agar tum ghar se nikle toh.",
+    "Aaj koi tumhe yaad kar raha hai. Ho sakta hai loan recovery wala ho.",
+    "Stars kehte hain: paani piyo, kaam karo, drama kam karo.",
+    "Aaj kisi ka dil jeet sakte ho. Pehle apni neend poori karo."
+  ]
+};
+
+let love = 100;
+let clicks = 0;
+
+function generate(type) {
+  const list = data[type];
+  const el = document.getElementById(type);
+  el.textContent = list[Math.floor(Math.random() * list.length)];
+}
+
+function addLove() {
+  love += Math.floor(Math.random() * 100) + 1;
+  document.getElementById("love").textContent = love.toLocaleString("en-IN");
+  document.getElementById("loveTitle").textContent =
+    love > 100000 ? "NASA ko call karo!" :
+    love > 10000 ? "Server pighal raha hai!" :
+    love > 1000 ? "Pyaar ne limits cross kar di!" :
+    "Pyaar toh unlimited hai!";
+  document.getElementById("loveText").textContent =
+    love > 100000 ? "Universe storage full. Feelings delete nahi hongi." :
+    love > 1000 ? "Itna pyaar? Calculator ne resignation de diya." :
+    "Battery 2% hai, par feelings " + love + "%.";
+  document.getElementById("bar").style.width = (10 + Math.random() * 90) + "%";
+  document.getElementById("heart").textContent =
+    ["💗","💖","💘","💝","❤️‍🔥"][Math.floor(Math.random()*5)];
+  floatHeart();
+}
+
+function resetLove() {
+  love = 100;
+  document.getElementById("love").textContent = love;
+  document.getElementById("loveTitle").textContent = "Pyaar toh unlimited hai!";
+  document.getElementById("loveText").textContent = "Reset hua hai, feelings nahi.";
+  document.getElementById("bar").style.width = "100%";
+  document.getElementById("heart").textContent = "💗";
+}
+
+function compatibility() {
+  const a = document.getElementById("name1").value.trim();
+  const b = document.getElementById("name2").value.trim();
+  const el = document.getElementById("compat");
+
+  if (!a || !b) {
+    el.textContent = "Pehle dono naam likho. Calculator telepathic nahi hai.";
+    return;
+  }
+
+  const score = Math.floor(Math.random() * 101);
+  const results = score > 85
+    ? "Shaadi mein samose kaun laayega, abhi decide kar lo. 😂"
+    : score > 60
+    ? "Achha potential hai. Communication aur chai zaroori hai."
+    : score > 35
+    ? "Chemistry possible hai. Mathematics thodi weak hai."
+    : "Compatibility low, meme-sharing compatibility high.";
+
+  el.textContent = a + " + " + b + " = " + score + "% — " + results;
+}
+
+function countClick() {
+  clicks++;
+  document.getElementById("clicks").textContent =
+    clicks.toLocaleString("en-IN");
+  if (clicks % 10 === 0) toast("Achievement unlocked: Time waste expert 🏆");
+  else toast("Click registered. Zindagi mein koi badlav nahi aaya.");
+}
+
+function singleMode() {
+  document.getElementById("sleep").textContent = "8h+";
+  document.getElementById("money").textContent = "₹?";
+  document.getElementById("peace").textContent = "∞";
+  toast("Single mode activated. Responsibilities still exist.");
+}
+
+function floatHeart() {
+  const el = document.createElement("div");
+  el.className = "float";
+  el.textContent = ["💗","💖","💕","✨","😂"][Math.floor(Math.random()*5)];
+  el.style.left = Math.random() * 95 + "vw";
+  el.style.fontSize = (18 + Math.random()*25) + "px";
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3000);
+}
+
+let toastTimer;
+function toast(message) {
+  let el = document.querySelector(".toast");
+  if (!el) {
+    el = document.createElement("div");
+    el.className = "toast";
+    document.body.appendChild(el);
+  }
+  el.textContent = message;
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => el.remove(), 2200);
+}
+</script>
+</body>
+      </html>
+      
